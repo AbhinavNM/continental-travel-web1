@@ -30,14 +30,6 @@ const Home = () => {
     duration: "1 Day",
     rating: 4.9,
     reviews: 156
-  }, {
-    id: 4,
-    title: "Your Awesome Tour",
-    description: "A brief description of your new tour.",
-    image: "/lovable-uploads/my-awesome-tour.jpg",
-    duration: "4 Days",
-    rating: 5.0,
-    reviews: 42
   }];
 
   const testimonials = [{
