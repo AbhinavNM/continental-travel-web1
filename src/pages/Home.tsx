@@ -79,9 +79,9 @@ const Home = () => {
         backgroundImage: `linear-gradient(rgba(24,78,119,0.6), rgba(52,160,164,0.6)), url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21')`
       }} />
         <div className="relative z-10 text-center text-white px-4 md:px-4 max-w-4xl mx-auto pt-12 md:pt-32">
-          <h1 className="font-bowlby font-bold mb-6 md:mb-6 animate-fade-in text-2xl md:text-4xl lg:text-5xl">
+          <h1 className="font-poppins font-bold mb-6 md:mb-6 animate-fade-in text-2xl md:text-4xl lg:text-5xl">
             Discover
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-coolBlue-200 to-coolBlue-100 font-dancing text-4xl md:text-6xl lg:text-8xl mt-2 mb-2">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-coolBlue-200 to-coolBlue-100 font-lato text-4xl md:text-6xl lg:text-8xl mt-2 mb-2">
               Explore the Wonders of Sri Lanka
             </span>
           </h1>
