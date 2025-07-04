@@ -90,7 +90,7 @@ const Home = () => {
           <h1 className="font-bowlby font-bold mb-6 md:mb-6 animate-fade-in text-2xl md:text-4xl lg:text-5xl">
             Discover
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-coolBlue-200 to-coolBlue-100 font-dancing text-4xl md:text-6xl lg:text-8xl mt-2 mb-2">
-              Sri Lanka
+              Explore the Wonders of Sri Lanka
             </span>
           </h1>
           <p className="text-base md:text-xl lg:text-2xl mb-8 md:mb-8 animate-fade-in max-w-2xl mx-auto font-lato leading-relaxed px-2 md:px-0">
