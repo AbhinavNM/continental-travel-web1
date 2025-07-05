@@ -79,12 +79,12 @@ const Home = () => {
         backgroundImage: `linear-gradient(rgba(24,78,119,0.6), rgba(52,160,164,0.6)), url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21')`
       }} />
         <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pt-12 md:pt-32">
-          <h1 className="font-poppins font-bold mb-6 md:mb-6 animate-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-amatic font-bold mb-4 animate-fade-in text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
             Discover
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-coolBlue-200 to-coolBlue-100 font-lato text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2 mb-2">
-              Explore the Wonders of Sri Lanka
-            </span>
           </h1>
+          <span className="block text-coolBlue-600 font-playfair-sc text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2 mb-2 animate-fade-in">
+            Sri Lanka
+          </span>
           <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-8 animate-fade-in max-w-2xl mx-auto font-lato leading-relaxed px-2 md:px-0">
             Experience the Pearl of the Indian Ocean with expertly crafted tours, 
             luxury accommodations, and unforgettable adventures.
