@@ -17,15 +17,15 @@ const Contact = () => {
       <ContactHero />
 
       {/* Contact Section - Enhanced mobile spacing */}
-      <section className="py-12 sm:py-16 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
+      <section className="py-16 sm:py-20 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             
             {/* Contact Form */}
             <ContactForm />
 
             {/* Contact Information */}
-            <div className="space-y-6 sm:space-y-8 md:space-y-8">
+            <div className="space-y-8">
               <ContactInfo />
               <SocialMedia />
               <QuickContact />
@@ -37,7 +37,7 @@ const Contact = () => {
       <MapSection />
 
       {/* Footer with enhanced mobile spacing */}
-      <div className="mt-8 sm:mt-6 md:mt-0">
+      <div className="mt-12 sm:mt-16 md:mt-20">
         <Footer />
       </div>
     </div>

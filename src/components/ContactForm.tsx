@@ -29,12 +29,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-800 mb-8">Send Us a Message</h2>
+      <form onSubmit={handleSubmit} className="space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2.5">
               Full Name *
             </label>
             <input
@@ -44,12 +44,12 @@ const ContactForm = () => {
               required
               value={formData.name}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tropical-teal focus:border-transparent transition-all duration-300"
+              className="w-full px-4 py-3 sm:px-5 sm:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coolBlue-500 focus:border-transparent transition-all duration-300"
               placeholder="Enter your full name"
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2.5">
               Email Address *
             </label>
             <input
@@ -59,7 +59,7 @@ const ContactForm = () => {
               required
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tropical-teal focus:border-transparent transition-all duration-300"
+              className="w-full px-4 py-3 sm:px-5 sm:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coolBlue-500 focus:border-transparent transition-all duration-300"
               placeholder="Enter your email"
             />
           </div>
@@ -67,7 +67,7 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2.5">
               Phone Number
             </label>
             <input
@@ -76,12 +76,12 @@ const ContactForm = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tropical-teal focus:border-transparent transition-all duration-300"
+              className="w-full px-4 py-3 sm:px-5 sm:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coolBlue-500 focus:border-transparent transition-all duration-300"
               placeholder="Enter your phone number"
             />
           </div>
           <div>
-            <label htmlFor="destination" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="destination" className="block text-sm font-medium text-gray-700 mb-2.5">
               Interested Destination
             </label>
             <select
@@ -89,7 +89,7 @@ const ContactForm = () => {
               name="destination"
               value={formData.destination}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tropical-teal focus:border-transparent transition-all duration-300"
+              className="w-full px-4 py-3 sm:px-5 sm:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coolBlue-500 focus:border-transparent transition-all duration-300"
             >
               <option value="">Select destination</option>
               <option value="cultural-triangle">Cultural Triangle</option>
@@ -104,7 +104,7 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="travelDate" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="travelDate" className="block text-sm font-medium text-gray-700 mb-2.5">
               Preferred Travel Date
             </label>
             <input
@@ -113,11 +113,11 @@ const ContactForm = () => {
               name="travelDate"
               value={formData.travelDate}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tropical-teal focus:border-transparent transition-all duration-300"
+              className="w-full px-4 py-3 sm:px-5 sm:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coolBlue-500 focus:border-transparent transition-all duration-300"
             />
           </div>
           <div>
-            <label htmlFor="groupSize" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="groupSize" className="block text-sm font-medium text-gray-700 mb-2.5">
               Group Size
             </label>
             <select
@@ -125,7 +125,7 @@ const ContactForm = () => {
               name="groupSize"
               value={formData.groupSize}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tropical-teal focus:border-transparent transition-all duration-300"
+              className="w-full px-4 py-3 sm:px-5 sm:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coolBlue-500 focus:border-transparent transition-all duration-300"
             >
               <option value="">Select group size</option>
               <option value="1">Solo Traveler</option>
@@ -138,7 +138,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2.5">
             Message
           </label>
           <textarea
@@ -147,14 +147,14 @@ const ContactForm = () => {
             rows={6}
             value={formData.message}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tropical-teal focus:border-transparent transition-all duration-300"
+            className="w-full px-4 py-3 sm:px-5 sm:py-3.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coolBlue-500 focus:border-transparent transition-all duration-300"
             placeholder="Tell us about your travel preferences, special requirements, or any questions you have..."
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-tropical-coral text-white py-4 rounded-lg font-semibold text-lg hover:bg-tropical-coral/90 hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+          className="w-full bg-coolBlue-600 text-white py-3.5 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-coolBlue-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
         >
           Send Message
           <Send className="h-5 w-5 ml-2" />
