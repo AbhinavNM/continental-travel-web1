@@ -110,73 +110,73 @@ const InternationalTours = () => {
       <Navigation />
       
       {/* Mobile-Optimized Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-0">
+      <section className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden py-16 sm:py-20 md:py-24">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828')`
           }}
         />
-        <div className="relative z-10 text-center text-white px-4 pt-20 max-w-4xl mx-auto">
-          <h1 className="font-playfair-sc text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
+        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+          <h1 className="font-playfair-sc text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
             International Tours
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-2xl mx-auto mb-8 leading-relaxed font-lato">
+          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto mb-8 leading-relaxed font-lato">
             Explore the world with our expertly crafted international travel packages
           </p>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 font-playfair-sc">Why Travel Internationally with Us?</h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-lato">
+      <section className="py-16 sm:py-20 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 font-playfair-sc">Why Travel Internationally with Us?</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-lato leading-relaxed">
               From Sri Lanka to the world - we make international travel seamless and affordable
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <div className="text-center p-4 md:p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:-translate-y-1">
-              <Plane className="h-10 w-10 md:h-12 md:w-12 text-coolBlue-600 mx-auto mb-3 md:mb-4" />
-              <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-3 font-playfair-sc">Best Flight Deals</h3>
-              <p className="text-sm md:text-base text-gray-600 font-lato">Exclusive rates with major airlines departing from Colombo</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <Plane className="h-10 w-10 sm:h-12 sm:w-12 text-coolBlue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair-sc">Best Flight Deals</h3>
+              <p className="text-base text-gray-600 font-lato">Exclusive rates with major airlines departing from Colombo</p>
             </div>
             
-            <div className="text-center p-4 md:p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:-translate-y-1">
-              <Globe className="h-10 w-10 md:h-12 md:w-12 text-coolBlue-600 mx-auto mb-3 md:mb-4" />
-              <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-3 font-playfair-sc">Visa Assistance</h3>
-              <p className="text-sm md:text-base text-gray-600 font-lato">Complete visa support for Sri Lankan passport holders</p>
+            <div className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <Globe className="h-10 w-10 sm:h-12 sm:w-12 text-coolBlue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair-sc">Visa Assistance</h3>
+              <p className="text-base text-gray-600 font-lato">Complete visa support for Sri Lankan passport holders</p>
             </div>
             
-            <div className="text-center p-4 md:p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:-translate-y-1">
-              <Users className="h-10 w-10 md:h-12 md:w-12 text-coolBlue-600 mx-auto mb-3 md:mb-4" />
-              <h3 className="text-lg md:text-xl font-semibent text-gray-800 mb-2 md:mb-3 font-playfair-sc">Group Discounts</h3>
-              <p className="text-sm md:text-base text-gray-600 font-lato">Special rates for families and groups traveling together</p>
+            <div className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <Users className="h-10 w-10 sm:h-12 sm:w-12 text-coolBlue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair-sc">Group Discounts</h3>
+              <p className="text-base text-gray-600 font-lato">Special rates for families and groups traveling together</p>
             </div>
             
-            <div className="text-center p-4 md:p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:-translate-y-1">
-              <Calendar className="h-10 w-10 md:h-12 md:w-12 text-coolBlue-600 mx-auto mb-3 md:mb-4" />
-              <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-3 font-playfair-sc">Flexible Booking</h3>
-              <p className="text-sm md:text-base text-gray-600 font-lato">Easy payment plans and flexible cancellation policies</p>
+            <div className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <Calendar className="h-10 w-10 sm:h-12 sm:w-12 text-coolBlue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair-sc">Flexible Booking</h3>
+              <p className="text-base text-gray-600 font-lato">Easy payment plans and flexible cancellation policies</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Mobile-Optimized Filters */}
-      <section className="py-6 md:py-8 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-2 md:gap-4 justify-center items-center">
-            <Filter className="h-4 w-4 md:h-5 md:w-5 text-gray-600" />
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 justify-center items-center">
+            <Filter className="h-5 w-5 text-gray-600" />
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-4 py-2 md:px-6 md:py-2 rounded-full font-medium text-sm md:text-base font-playfair-sc transition-all duration-300 ease-out transform hover:scale-102 hover:shadow-lg hover:-translate-y-0.5 active:scale-98 active:translate-y-0 ${
+                className={`px-4 sm:px-5 md:px-7 py-2 sm:py-2.5 rounded-full font-medium text-sm sm:text-base md:text-lg font-playfair-sc transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-lg hover:-translate-y-1 active:scale-98 active:translate-y-0 ${
                   selectedCategory === category.id
-                    ? 'bg-coolBlue-600 text-white shadow-lg scale-102'
+                    ? 'bg-coolBlue-600 text-white shadow-lg scale-105'
                     : 'bg-gray-100 text-gray-700 hover:bg-coolBlue-600 hover:text-white'
                 }`}
               >
@@ -188,71 +188,71 @@ const InternationalTours = () => {
       </section>
 
       {/* Mobile-Optimized Tours Grid */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <section className="py-16 sm:py-20 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             {filteredTours.map((tour) => (
               <div key={tour.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col">
                 <div className="relative overflow-hidden">
                   <img 
                     src={tour.image} 
                     alt={tour.title}
-                    className="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-56 sm:h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute top-3 md:top-4 right-3 md:right-4 bg-white/90 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1 rounded-full flex items-center">
-                    <Star className="h-3 w-3 md:h-4 md:w-4 text-yellow-400 fill-current mr-1" />
-                    <span className="text-xs md:text-sm font-semibold">{tour.rating}</span>
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center">
+                    <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                    <span className="text-sm font-semibold">{tour.rating}</span>
                   </div>
-                  <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 bg-coolBlue-600 text-white px-2 py-1 md:px-3 md:py-1 rounded-full flex items-center">
-                    <MapPin className="h-3 w-3 md:h-4 md:w-4 mr-1" />
-                    <span className="text-xs md:text-sm font-semibold">{tour.destination}</span>
+                  <div className="absolute bottom-4 left-4 bg-coolBlue-600 text-white px-3 py-1 rounded-full flex items-center">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    <span className="text-sm font-semibold">{tour.destination}</span>
                   </div>
                 </div>
                 
-                <div className="p-4 md:p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 line-clamp-2 font-playfair-sc">{tour.title}</h3>
-                  <p className="text-gray-600 mb-3 md:mb-4 text-sm line-clamp-2 font-lato">{tour.description}</p>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 font-playfair-sc">{tour.title}</h3>
+                  <p className="text-gray-600 mb-4 text-base line-clamp-2 font-lato">{tour.description}</p>
                   
-                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4 text-xs md:text-sm text-gray-500">
+                  <div className="flex items-center gap-4 mb-4 text-base text-gray-500">
                     <div className="flex items-center">
-                      <Calendar className="h-3 w-3 md:h-4 md:w-4 mr-1" />
+                      <Calendar className="h-5 w-5 mr-1" />
                       {tour.duration}
                     </div>
                     <div className="flex items-center">
-                      <Users className="h-3 w-3 md:h-4 md:w-4 mr-1" />
+                      <Users className="h-5 w-5 mr-1" />
                       {tour.groupSize}
                     </div>
                   </div>
 
-                  <div className="mb-3 md:mb-4 flex-grow">
-                    <h4 className="font-semibold text-gray-800 mb-2 text-sm md:text-base font-playfair-sc">Highlights:</h4>
-                    <div className="flex flex-wrap gap-1 md:gap-2">
+                  <div className="mb-4 flex-grow">
+                    <h4 className="font-semibold text-gray-800 mb-2 text-lg font-playfair-sc">Highlights:</h4>
+                    <div className="flex flex-wrap gap-2">
                       {tour.highlights.slice(0, 3).map((highlight, index) => (
-                        <span key={index} className="bg-coolBlue-50 text-coolBlue-700 text-xs px-2 py-1 rounded-full">
+                        <span key={index} className="bg-coolBlue-50 text-coolBlue-700 text-sm px-3 py-1 rounded-full">
                           {highlight}
                         </span>
                       ))}
                       {tour.highlights.length > 3 && (
-                        <span className="text-xs text-gray-500">+{tour.highlights.length - 3} more</span>
+                        <span className="text-sm text-gray-500">+{tour.highlights.length - 3} more</span>
                       )}
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center mb-3 md:mb-4">
+                  <div className="flex justify-between items-center mb-4">
                     <div className="text-right">
                       <div className="flex items-center mb-1">
-                        <Star className="h-3 w-3 md:h-4 md:w-4 text-yellow-400 fill-current mr-1" />
-                        <span className="text-xs md:text-sm font-semibold">{tour.rating}</span>
+                        <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                        <span className="text-sm font-semibold">{tour.rating}</span>
                       </div>
                       <span className="text-xs text-gray-500">{tour.reviews} reviews</span>
                     </div>
                   </div>
 
                   <div className="mt-auto">
-                    <button className="relative w-full bg-coolBlue-600 text-white py-2 md:py-3 rounded-full font-semibold text-sm md:text-base font-playfair-sc transition-all duration-300 ease-out transform hover:scale-102 hover:bg-coolBlue-700 hover:shadow-lg hover:-translate-y-0.5 active:scale-98 active:translate-y-0 group/button overflow-hidden">
+                    <button className="relative w-full bg-coolBlue-600 text-white py-3.5 rounded-full font-semibold text-lg font-playfair-sc transition-all duration-300 ease-out transform hover:scale-105 hover:bg-coolBlue-700 hover:shadow-lg hover:-translate-y-1 active:scale-98 group/button overflow-hidden">
                       <span className="relative z-10 flex items-center justify-center">
                         Book This Tour
-                        <ArrowRight className="h-3 w-3 md:h-4 md:w-4 ml-2 transition-transform duration-300 group-hover/button:translate-x-1 group-hover/button:scale-110" />
+                        <ArrowRight className="h-5 w-5 ml-2 transition-transform duration-300 group-hover/button:translate-x-1" />
                       </span>
                       <div className="absolute inset-0 bg-gradient-to-r from-coolBlue-500 via-coolBlue-600 to-coolBlue-800 opacity-0 group-hover/button:opacity-100 transition-opacity duration-300"></div>
                     </button>
@@ -265,49 +265,49 @@ const InternationalTours = () => {
       </section>
 
       {/* Special Services Section */}
-      <section className="py-12 md:py-16 bg-coolBlue-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair-sc">Complete Travel Services</h2>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto font-lato">
+      <section className="py-16 sm:py-20 md:py-24 bg-coolBlue-600 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 font-playfair-sc">Complete Travel Services</h2>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto font-lato leading-relaxed">
               We handle everything so you can focus on creating memories
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:-translate-y-1">
-              <div className="bg-coolBlue-100 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                <Plane className="h-6 w-6 md:h-8 md:w-8 text-coolBlue-600" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <div className="bg-coolBlue-100 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Plane className="h-7 w-7 sm:h-8 sm:w-8 text-coolBlue-600" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-3 font-playfair-sc">Flight Bookings</h3>
-              <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base font-lato">Best rates on international flights with flexible booking options</p>
-              <ul className="text-xs md:text-sm text-gray-600 space-y-1 font-lato">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair-sc">Flight Bookings</h3>
+              <p className="text-base text-gray-600 mb-4 font-lato">Best rates on international flights with flexible booking options</p>
+              <ul className="text-sm text-gray-600 space-y-2 font-lato">
                 <li>• Economy to Business Class</li>
                 <li>• Direct & connecting flights</li>
                 <li>• Special group rates</li>
               </ul>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:-translate-y-1">
-              <div className="bg-coolBlue-100 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                <Globe className="h-6 w-6 md:h-8 md:w-8 text-coolBlue-600" />
+            <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <div className="bg-coolBlue-100 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-7 w-7 sm:h-8 sm:w-8 text-coolBlue-600" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-3 font-playfair-sc">Visa Processing</h3>
-              <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base font-lato">Complete visa assistance for Sri Lankan passport holders</p>
-              <ul className="text-xs md:text-sm text-gray-600 space-y-1 font-lato">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair-sc">Visa Processing</h3>
+              <p className="text-base text-gray-600 mb-4 font-lato">Complete visa assistance for Sri Lankan passport holders</p>
+              <ul className="text-sm text-gray-600 space-y-2 font-lato">
                 <li>• Document preparation</li>
                 <li>• Application submission</li>
                 <li>• Status tracking</li>
               </ul>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-102 hover:-translate-y-1">
-              <div className="bg-coolBlue-100 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
-                <Users className="h-6 w-6 md:h-8 md:w-8 text-coolBlue-600" />
+            <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+              <div className="bg-coolBlue-100 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-7 w-7 sm:h-8 sm:w-8 text-coolBlue-600" />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-3 font-playfair-sc">Travel Insurance</h3>
-              <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base font-lato">Comprehensive coverage for international travel</p>
-              <ul className="text-xs md:text-sm text-gray-600 space-y-1 font-lato">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 font-playfair-sc">Travel Insurance</h3>
+              <p className="text-base text-gray-600 mb-4 font-lato">Comprehensive coverage for international travel</p>
+              <ul className="text-sm text-gray-600 space-y-2 font-lato">
                 <li>• Medical coverage</li>
                 <li>• Trip cancellation</li>
                 <li>• Baggage protection</li>
@@ -318,20 +318,20 @@ const InternationalTours = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-16 bg-coolBlue-700 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 font-playfair-sc">Ready to Explore the World?</h2>
-          <p className="text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto font-lato">
+      <section className="py-16 sm:py-20 md:py-24 bg-coolBlue-700 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 font-playfair-sc">Ready to Explore the World?</h2>
+          <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto font-lato leading-relaxed">
             Contact our international travel specialists for personalized itineraries and best deals on your dream destination.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-            <button className="relative bg-white text-coolBlue-700 px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg font-playfair-sc transition-all duration-300 ease-out transform hover:scale-102 hover:bg-coolBlue-50 hover:shadow-lg hover:-translate-y-0.5 active:scale-98 active:translate-y-0 group overflow-hidden">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="relative bg-white text-coolBlue-700 px-8 py-4 rounded-full font-semibold text-lg font-playfair-sc transition-all duration-300 ease-out transform hover:scale-105 hover:bg-coolBlue-50 hover:shadow-lg hover:-translate-y-1 active:scale-98 group overflow-hidden">
               <span className="relative z-10">Get Free Quote</span>
               <div className="absolute inset-0 bg-gradient-to-r from-white via-coolBlue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
             <a 
               href="tel:+94112345678"
-              className="relative border-2 border-white text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg font-playfair-sc transition-all duration-300 ease-out transform hover:scale-102 hover:bg-white hover:text-coolBlue-700 hover:shadow-lg hover:-translate-y-0.5 active:scale-98 active:translate-y-0 group overflow-hidden"
+              className="relative border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg font-playfair-sc transition-all duration-300 ease-out transform hover:scale-105 hover:bg-white hover:text-coolBlue-700 hover:shadow-lg hover:-translate-y-1 active:scale-98 group overflow-hidden"
             >
               <span className="relative z-10">Call Travel Expert</span>
               <div className="absolute inset-0 bg-gradient-to-r from-white via-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
