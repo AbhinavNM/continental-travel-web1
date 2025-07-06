@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, MapPin, Phone, Mail } from 'lucide-react';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetFooter } from '@/components/ui/sheet';
+import MobileMenu from './MobileMenu';
 import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        setIsScrolledDown(true);
+      } else {
+        setIsScrolledDown(false);
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   const navItems = [{
     name: 'Home',
     path: '/'
@@ -23,10 +42,6 @@ const Navigation = () => {
     name: 'Contact Us',
     path: '/contact'
   }];
-
-  const handleMenuItemClick = () => {
-    setIsSheetOpen(false);
-  };
 
   return <>
       {/* Top Bar with Contact Info - Hidden on mobile */}
@@ -52,7 +67,7 @@ const Navigation = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-white/95 backdrop-blur-md shadow-lg fixed top-0 md:top-8 left-0 right-0 z-40">
+      <nav className={`bg-white/95 backdrop-blur-md shadow-lg fixed top-0 md:top-8 left-0 right-0 z-40 transition-transform duration-300 ${isScrolledDown ? '-translate-y-full' : 'translate-y-0'}`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-3 md:py-4">
             {/* Logo */}
@@ -85,61 +100,7 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon" className="ml-4">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Open menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="left" className="w-full sm:w-3/4 flex flex-col">
-                  <SheetHeader>
-                    <SheetTitle>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-coolBlue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                          <span className="text-white font-bold text-lg">CT</span>
-                        </div>
-                        <div>
-                          <h1 className="text-lg font-bold text-gray-800">Continental Tours</h1>
-                          <p className="text-sm text-gray-600">(Pvt) Ltd</p>
-                        </div>
-                      </div>
-                    </SheetTitle>
-                  </SheetHeader>
-                  <div className="flex-1 overflow-y-auto py-6">
-                    <div className="flex flex-col space-y-2">
-                      {navItems.map(item => (
-                        <Link 
-                          key={item.name}
-                          to={item.path} 
-                          className="text-gray-700 hover:text-coolBlue-600 hover:bg-coolBlue-100 font-semibold py-4 px-4 text-lg transition-all duration-300 rounded-lg border border-transparent hover:border-coolBlue-200 flex items-center active:bg-coolBlue-100 transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg" 
-                          onClick={handleMenuItemClick} 
-                          style={{ minHeight: '56px' }}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                  <SheetFooter className="pt-4 border-t border-gray-100">
-                    <div className="space-y-4 w-full">
-                      <Button 
-                        className="w-full bg-coolBlue-600 text-white" 
-                        onClick={handleMenuItemClick}
-                      >
-                        Book Now
-                      </Button>
-                      <Button 
-                        variant="outline"
-                        className="w-full" 
-                        onClick={handleMenuItemClick}
-                      >
-                        Plan Your Trip
-                      </Button>
-                    </div>
-                  </SheetFooter>
-                </SheetContent>
-              </Sheet>
+              <MobileMenu />
             </div>
           </div>
         </div>
