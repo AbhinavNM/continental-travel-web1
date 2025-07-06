@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, MapPin, Phone, Mail } from 'lucide-react';
-import MobileMenu from './MobileMenu';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetFooter } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
@@ -26,6 +26,7 @@ const Navigation = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
   const navItems = [{
     name: 'Home',
     path: '/'
@@ -42,6 +43,10 @@ const Navigation = () => {
     name: 'Contact Us',
     path: '/contact'
   }];
+
+  const handleMenuItemClick = () => {
+    setIsSheetOpen(false);
+  };
 
   return <>
       {/* Top Bar with Contact Info - Hidden on mobile */}
@@ -100,7 +105,67 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
-              <MobileMenu />
+              <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="outline" size="icon" className="ml-4">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Open menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-full flex flex-col">
+                  <SheetHeader>
+                    <SheetTitle>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-coolBlue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-bold text-lg">CT</span>
+                        </div>
+                        <div>
+                          <h1 className="text-lg font-bold text-gray-800">Continental Tours</h1>
+                          <p className="text-sm text-gray-600">(Pvt) Ltd</p>
+                        </div>
+                      </div>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <div className="flex-1 overflow-y-auto py-6">
+                    <div className="flex flex-col space-y-2">
+                      {navItems.map(item => (
+                        <Link 
+                          key={item.name}
+                          to={item.path} 
+                          className="text-gray-700 hover:text-coolBlue-600 font-semibold py-4 pl-8 pr-4 text-lg transition-all duration-300 flex items-center w-full" 
+                          onClick={(e) => {
+                            e.currentTarget.classList.add('bg-coolBlue-100');
+                            setTimeout(() => {
+                              e.currentTarget.classList.remove('bg-coolBlue-100');
+                            }, 200);
+                            handleMenuItemClick();
+                          }} 
+                          style={{ minHeight: '56px' }}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  <SheetFooter className="pt-4 border-t border-gray-100">
+                    <div className="space-y-4 w-full">
+                      <Button 
+                        className="w-full bg-coolBlue-600 text-white" 
+                        onClick={handleMenuItemClick}
+                      >
+                        Book Now
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        className="w-full" 
+                        onClick={handleMenuItemClick}
+                      >
+                        Plan Your Trip
+                      </Button>
+                    </div>
+                  </SheetFooter>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>
