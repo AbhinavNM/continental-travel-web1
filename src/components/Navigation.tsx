@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, MapPin, Phone, Mail } from 'lucide-react';
+import { Menu, MapPin, Phone, Mail, ChevronDown } from 'lucide-react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetFooter } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+
 
 const Navigation = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -27,22 +39,25 @@ const Navigation = () => {
     };
   }, []);
 
-  const navItems = [{
-    name: 'Home',
-    path: '/'
-  }, {
-    name: 'Day Tours',
-    path: '/day-tours'
-  }, {
-    name: 'International Tours',
-    path: '/international-tours'
-  }, {
-    name: 'Accommodation',
-    path: '/accommodation'
-  }, {
-    name: 'Contact Us',
-    path: '/contact'
-  }];
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    {
+      name: 'Tours',
+      isDropdown: true,
+      items: [
+        { name: 'Day Tours', path: '/day-tours' },
+        { name: 'International Tours', path: '/international-tours' },
+        { name: 'Nature Tours', path: '/tours/nature' },
+        { name: 'Cultural Tours', path: '/tours/culture' },
+        { name: 'Adventure Tours', path: '/tours/adventure' },
+      ],
+    },
+    { name: 'Destinations', path: '/destinations' },
+    { name: 'Transportation & Accommodation', path: '/transportation' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact Us', path: '/contact' },
+  ];
 
   const handleMenuItemClick = () => {
     setIsSheetOpen(false);
@@ -89,10 +104,28 @@ const Navigation = () => {
             {/* Desktop Navigation - Centered */}
             <div className="hidden md:flex items-center justify-center flex-1">
               <div className="flex items-center space-x-8">
-                {navItems.map(item => <Link key={item.name} to={item.path} className="text-gray-700 hover:text-coolBlue-600 font-medium transition-all duration-300 relative group transform hover:scale-105 px-4 py-2 rounded-md bg-white/80 backdrop-blur-sm shadow-sm hover:bg-white/90">
-                    {item.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-coolBlue-600 transition-all duration-300 group-hover:w-full"></span>
-                  </Link>)}
+                {navItems.map(item => (
+                  item.isDropdown ? (
+                    <DropdownMenu key={item.name}>
+                      <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-coolBlue-600 font-medium transition-all duration-300 relative group transform hover:scale-105 px-4 py-2 rounded-md bg-white/80 backdrop-blur-sm shadow-sm hover:bg-white/90 outline-none">
+                        {item.name} <ChevronDown className="h-4 w-4 ml-1" />
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-coolBlue-600 transition-all duration-300 group-hover:w-full"></span>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent>
+                        {item.items.map(subItem => (
+                          <DropdownMenuItem key={subItem.name} asChild>
+                            <Link to={subItem.path}>{subItem.name}</Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  ) : (
+                    <Link key={item.name} to={item.path} className="text-gray-700 hover:text-coolBlue-600 font-medium transition-all duration-300 relative group transform hover:scale-105 px-4 py-2 rounded-md bg-white/80 backdrop-blur-sm shadow-sm hover:bg-white/90">
+                      {item.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-coolBlue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                  )
+                ))}
               </div>
             </div>
 
@@ -129,35 +162,52 @@ const Navigation = () => {
                   <div className="flex-1 overflow-y-auto py-6">
                     <div className="flex flex-col space-y-2">
                       {navItems.map(item => (
-                        <Link 
-                          key={item.name}
-                          to={item.path} 
-                          className="text-gray-700 hover:text-coolBlue-600 font-semibold py-4 pl-8 pr-4 text-lg transition-all duration-300 flex items-center w-full" 
-                          onClick={(e) => {
-                            e.currentTarget.classList.add('bg-coolBlue-100');
-                            setTimeout(() => {
-                              e.currentTarget.classList.remove('bg-coolBlue-100');
-                            }, 200);
-                            handleMenuItemClick();
-                          }} 
-                          style={{ minHeight: '56px' }}
-                        >
-                          {item.name}
-                        </Link>
+                        item.isDropdown ? (
+                          <Collapsible key={item.name} className="w-full">
+                            <CollapsibleTrigger className="flex justify-between items-center text-gray-700 hover:text-coolBlue-600 font-semibold py-4 pl-8 pr-4 text-lg transition-all duration-300 w-full">
+                              {item.name}
+                              <ChevronDown className="h-5 w-5" />
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                              <div className="flex flex-col pl-12">
+                                {item.items.map(subItem => (
+                                  <Link
+                                    key={subItem.name}
+                                    to={subItem.path}
+                                    className="text-gray-600 hover:text-coolBlue-600 py-3 text-base"
+                                    onClick={handleMenuItemClick}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </CollapsibleContent>
+                          </Collapsible>
+                        ) : (
+                          <Link
+                            key={item.name}
+                            to={item.path}
+                            className="text-gray-700 hover:text-coolBlue-600 font-semibold py-4 pl-8 pr-4 text-lg transition-all duration-300 flex items-center w-full"
+                            onClick={handleMenuItemClick}
+                            style={{ minHeight: '56px' }}
+                          >
+                            {item.name}
+                          </Link>
+                        )
                       ))}
                     </div>
                   </div>
                   <SheetFooter className="pt-4 border-t border-gray-100">
                     <div className="space-y-4 w-full">
-                      <Button 
-                        className="w-full bg-coolBlue-600 text-white" 
+                      <Button
+                        className="w-full bg-coolBlue-600 text-white"
                         onClick={handleMenuItemClick}
                       >
                         Book Now
                       </Button>
-                      <Button 
+                      <Button
                         variant="outline"
-                        className="w-full" 
+                        className="w-full"
                         onClick={handleMenuItemClick}
                       >
                         Plan Your Trip
